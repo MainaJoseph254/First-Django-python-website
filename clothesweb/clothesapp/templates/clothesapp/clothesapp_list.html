@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    clothesapp_list
+{% endblock  %}
+
+{% block content %}
+<section>
+    <h1>Clothes App List</h1>
+    {% for post in clothesapp %}
+    <article class="post" >
+        <h2>
+        <a href="{% url 'clothesapp:page' slug=post.slug  %}">
+            {{ post.title }}
+        </a>
+        </h2>
+        <p>{{ post.date }}</p>
+        <p>{{ post.body }}</p>
+    </article>
+    {% endfor %}
+</section>
+{% endblock  %}
+
+
+
